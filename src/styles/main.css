@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  --montserrat: 'Montserrat', sans-serif;
+  --merriweather: 'Merriweather', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  min-width: 44px;
+  max-width: 44px;
+}
+
+.skip-link {
+  font-family: var(--montserrat);
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background-color: #EC2;
+  color: black;
+  font-weight: bold;
+  padding: 8px;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  background-color: rgb(22, 22, 22);
+  box-shadow: 0px 1px 10px #222;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 10px 5em;
+  z-index: 2;
+}
+
+nav .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav h1 {
+  font-family: var(--merriweather);
+  letter-spacing: 1px;
+  color: white;
+  display: inline;
+  margin-left: 10px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  list-style-type: none;
+  display: inline;
+  font-weight: bold;
+  color: white;
+  font-size: 1rem;
+  font-family: var(--montserrat);
+  padding: 5px;
+  margin-left: 3em;
+  transition: .3s ease;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+nav ul li:hover {
+  background-color: #EC2;
+  color: black;
+  border-radius: 10px;
+  box-shadow: 5px 5px rgb(215, 9, 9);
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+#jumbotron #hero img {
+  max-height: 60vh;
+  object-fit: cover;
+  object-position: center;
+  box-shadow:
+    0px 1.1px 2.2px rgba(0, 0, 0, 0.042),
+    0px 2.7px 5.3px rgba(0, 0, 0, 0.061),
+    0px 5.1px 10px rgba(0, 0, 0, 0.075),
+    0px 9.2px 17.9px rgba(0, 0, 0, 0.089),
+    0px 17.1px 33.4px rgba(0, 0, 0, 0.108),
+    0px 41px 80px rgba(0, 0, 0, 0.15)
+  ;
+}
+
+#explore {
+  min-height: 100vh;
+  background-color: whitesmoke;
+}
+
+#explore-title {
+  text-align: center;
+  padding: 70px 0;
+}
+
+#explore-title h2 {
+  font-family: var(--merriweather);
+}
+
+#explore article .res {
+  border-radius: 10px;
+  font-family: var(--montserrat);
+  box-shadow:
+    1.4px 1.4px 2.2px rgba(0, 0, 0, 0.025),
+    3.3px 3.4px 5.3px rgba(0, 0, 0, 0.036),
+    6.3px 6.4px 10px rgba(0, 0, 0, 0.045),
+    11.2px 11.4px 17.9px rgba(0, 0, 0, 0.054),
+    20.9px 21.3px 33.4px rgba(0, 0, 0, 0.065),
+    50px 51px 80px rgba(0, 0, 0, 0.09)
+  ;
+}
+
+#explore article img {
+  border-radius: 10px 10px 0 0;
+}
+
+#explore article .city {
+  font-size: .8rem;
+  text-align: center;
+}
+
+#explore article .res-description {
+  padding: 15px;
+}
+
+#explore article .res-description h3 {
+  font-family: var(--merriweather);
+  margin-bottom: 10px;
+}
+#explore article .res-description h4 {
+  font-family: var(--merriweather);
+}
+#explore article .res-description p {
+  color: #444;
+  font-size: .8rem;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #222;
+  color: white;
+  height: 10vh;
+  font-family: var(--montserrat);
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    position: absolute;
+    flex-direction: column;
+    width: 100%;
+    height: 80%;
+    transform: translate(0, -1000px);
+    transition: transform 0.3s ease-in-out;
+    justify-content: center;
+  }
+
+  nav .logo {
+    margin-bottom: 20px;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    margin: 20px 0;
+  }
+
+  nav.open {
+    transform: translate(0,0);
+  }
+
+  #hamburger {
+    width: 100%;
+    height: fit-content;
+    background-color: #222;
+    padding: 10px 20px;
+  }
+  
+  #hamburger #hamburger-btn {
+    display: block;
+    min-height: 44px;
+    max-width: 44px;
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  #jumbotron #hero img {
+    min-height: 50vh;
+  }
+  
+  #explore-title {
+    font-size: .8rem;
+    padding: 40px 0;
+  }
+
+  #explore article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 1.5em 1.5em 1.5em;
+    column-gap: 1.5em;
+    row-gap: 1.5em;
+  }
+
+  #explore article .res {
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  #explore article .res-description h4 {
+    font-size: .7rem;
+  }
+
+  #explore article .res-description p {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  #hamburger {
+    display: none;
+  }
+
+  #explore article {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 2em 2em 2em;
+    column-gap: 2em;
+    row-gap: 2em;
+  }
+
+  #explore article .res {
+    max-height: 300px;
+    overflow: hidden;
+  }
+
+  #explore article .res-description h4 {
+    font-size: .8rem;
+  }
+
+  #explore article .res-description h3 {
+    font-size: 1rem;
+  }
+
+  #explore article .res-description p {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  nav ul li {
+    display: flex;
+  }
+
+  #hamburger-btn {
+    display: none;
+  }
+
+  #explore article .res {
+    max-height: 400px;
+    overflow: scroll;
+  }
+
+  #explore article .res-description p {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #explore-title {
+    text-align: center;
+    padding: 70px 0;
+  }
+
+  #explore article {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 5em 5em 5em;
+    column-gap: 5em;
+    row-gap: 5em;
+  }
+
+  #explore article .res {
+    min-height: 650px;
+    overflow: hidden;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #jumbotron #hero img {
+    width: 100%;
+  }
+}
