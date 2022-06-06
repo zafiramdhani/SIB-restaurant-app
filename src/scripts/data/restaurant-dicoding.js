@@ -8,9 +8,15 @@ class RestaurantDicodingSource {
   }
 
   // eslint-disable-next-line no-unused-vars
+  // static async detailRestaurant(id) {
+  //   const response = await fetch(API_ENDPOINT.DETAIL(id));
+  //   return response.json();
+  // }
+
   static async detailRestaurant(id) {
-    const response = await fetch(API_ENDPOINT.DETAIL);
-    return response.json();
+    const response = await fetch(API_ENDPOINT.DETAIL(id));
+    const responseJson = await response.json();
+    return responseJson.restaurant;
   }
 }
 

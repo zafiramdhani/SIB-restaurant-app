@@ -5,14 +5,15 @@ import { createRestaurantDetailTemplate } from '../templates/template-creator';
 const Detail = {
   async render() {
     return `
-      <div class="restaurant" id="restaurant"></div>
+      <article id="content">
+      </article>
     `;
   },
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const restaurant = await RestaurantDicodingSource(url.id);
-    const restaurantContainer = document.querySelector('#restaurant');
+    const restaurant = await RestaurantDicodingSource.detailRestaurant(url.id);
+    const restaurantContainer = document.querySelector('#content');
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
   },
 };
