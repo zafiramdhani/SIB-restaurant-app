@@ -5,7 +5,7 @@ import { createRestaurantDetailTemplate } from '../templates/template-creator';
 const Detail = {
   async render() {
     return `
-      <article id="content">
+      <article id="detail-content">
       </article>
     `;
   },
@@ -13,7 +13,7 @@ const Detail = {
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
     const restaurant = await RestaurantDicodingSource.detailRestaurant(url.id);
-    const restaurantContainer = document.querySelector('#content');
+    const restaurantContainer = document.querySelector('#detail-content');
     restaurantContainer.innerHTML = createRestaurantDetailTemplate(restaurant);
   },
 };

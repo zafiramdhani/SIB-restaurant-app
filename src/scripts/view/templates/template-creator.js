@@ -1,16 +1,41 @@
 import CONFIG from '../../globals/config';
 
 const createRestaurantDetailTemplate = (restaurant) => `
-  <h2 class="restaurant-name">${restaurant.name}</h2>
-  <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" class="restaurant-picture" alt="${restaurant.name}">
-  <div class="restaurant-info">
-    <p>Alamat : ${restaurant.address}</p>
-    <p>Kota : ${restaurant.city}</p>
-    <p>Deskripsi : ${restaurant.description}</p>
-    <p>Kategori : </p>
-    <p>Menu makanan : ${restaurant.menus.foods.map((food) => `${food.name}`).join(', ')}</p>
-    <p>Menu minuman : ${restaurant.menus.drinks}</p>
-    <p>Customer review : ${restaurant.customerReviews}</p>
+  <div class="res-detail-header">
+    <div class="image">
+      <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" class="restaurant-picture" alt="${restaurant.name}">
+    </div>
+    <div class="desc">
+      <h2>${restaurant.name}</h2>
+      <div class="line"></div>
+      <p>Alamat : ${restaurant.address}</p>
+      <p>Kota : ${restaurant.city}</p>
+      <p>Kategori : ${restaurant.categories.map((category) => `${category.name}`).join(', ')}</p><br>
+      <p>${restaurant.description}</p>
+    </div>
+  </div>
+  <div class="res-detail-content">
+    <div class="menu-makanan">
+      <strong>Menu makanan : </strong>
+      <div class="line"></div>
+      <ol>${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}</ol>
+    </div>
+    <div class="menu-minuman">
+      <strong>Menu minuman : </strong>
+      <div class="line"></div>
+      <ol>${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}</ol>
+    </div>
+    <div class="customer-review">
+      <strong>Customer Reviews :</strong>
+      <div class="line"></div>
+      ${restaurant.customerReviews.map((review) => `
+        <div class="customer-review-list">
+          <strong class="customer-review-name">${review.name}</strong>
+          <p class="customer-review-date">${review.date}</p>
+          <em class="customer-review-review">"${review.review}"</em>
+        </div>
+      `).join('</br>')}
+    </div>
   </div>
 `;
 
