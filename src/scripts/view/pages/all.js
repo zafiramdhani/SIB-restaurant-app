@@ -1,5 +1,6 @@
 import RestaurantDicodingSource from '../../data/restaurant-dicoding';
 import { createRestaurantItemTemplate } from '../templates/template-creator';
+import '../templates/navbar-active';
 
 const All = {
   async render() {

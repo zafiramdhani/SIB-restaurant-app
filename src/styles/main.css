@@ -38,6 +38,13 @@ button {
   z-index: 100;
 }
 
+.active {
+  background-color: rgb(243, 111, 24);
+  color: black;
+  border-radius: 10px;
+  box-shadow: 3px 3px rgb(215, 9, 9);
+}
+
 #favorite-button {
   font-size: 1.6rem;
   position: fixed;
@@ -131,8 +138,6 @@ button {
             transform: rotate(8deg);
   }
 }
-
-
 
 .skip-link:focus {
   top: 0;
