@@ -16,17 +16,17 @@ const createRestaurantDetailTemplate = (restaurant) => `
   </div>
   <div class="res-detail-content">
     <div class="menu-makanan">
-      <strong>Menu makanan : </strong>
+      <strong>Menu makanan</strong>
       <div class="line"></div>
       <ol>${restaurant.menus.foods.map((food) => `<li>${food.name}</li>`).join('')}</ol>
     </div>
     <div class="menu-minuman">
-      <strong>Menu minuman : </strong>
+      <strong>Menu minuman</strong>
       <div class="line"></div>
       <ol>${restaurant.menus.drinks.map((drink) => `<li>${drink.name}</li>`).join('')}</ol>
     </div>
     <div class="customer-review">
-      <strong>Customer Reviews :</strong>
+      <strong>Customer Reviews</strong>
       <div class="line"></div>
       ${restaurant.customerReviews.map((review) => `
         <div class="customer-review-list">
@@ -54,12 +54,21 @@ const createRestaurantItemTemplate = (restaurant) => `
     </div>
 `;
 
-const createUnclickedFavButtonTemplate = () => {
+const createUnclickedFavButtonTemplate = () => `
+  <button aria-label="Add to favorite" id="favorite-button">
+    <i class="fa-regular fa-star"></i>
+  </button>
+  `;
 
-};
+const createClickedFavButtonTemplate = () => `
+  <button aria-label="Remove from favorite" id="favorite-button">
+    <i class="fa-solid fa-star"></i>
+  </button>
+`;
 
 export {
   createRestaurantDetailTemplate,
   createRestaurantItemTemplate,
   createUnclickedFavButtonTemplate,
+  createClickedFavButtonTemplate,
 };
