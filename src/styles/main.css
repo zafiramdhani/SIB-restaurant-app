@@ -23,7 +23,6 @@ a {
 
 button {
   min-width: 44px;
-  /* max-width: 44px; */
 }
 
 .skip-link {
@@ -545,11 +544,5 @@ footer {
 
   #explore #all-content .res-description p {
     font-size: .8em;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  #jumbotron #hero img {
-    width: 100%;
   }
 }
