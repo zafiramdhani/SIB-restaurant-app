@@ -1,6 +1,8 @@
+/* eslint-disable prefer-regex-literals */
 /* eslint-disable import/no-extraneous-dependencies */
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const { GenerateSW } = require('workbox-webpack-plugin');
 const path = require('path');
 
 module.exports = {
@@ -36,6 +38,40 @@ module.exports = {
           to: path.resolve(__dirname, 'dist/'),
         },
       ],
+    }),
+    new GenerateSW({
+      clientsClaim: true,
+      skipWaiting: true,
+      runtimeCaching: [
+        {
+          urlPattern: new RegExp(
+            'https://restaurant-api.dicoding.dev/',
+          ),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'dicoding_api',
+          },
+        },
+        {
+          urlPattern: new RegExp(
+            'https://kit.fontawesome.com/',
+          ),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'fontawesome',
+          },
+        },
+        {
+          urlPattern: new RegExp(
+            'https://fonts.googleapis.com/',
+          ),
+          handler: 'StaleWhileRevalidate',
+          options: {
+            cacheName: 'google-fonts',
+          },
+        },
+      ],
+      ignoreURLParametersMatching: [/.*/],
     }),
   ],
 };

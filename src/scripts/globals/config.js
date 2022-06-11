@@ -5,6 +5,7 @@ const CONFIG = {
   DATABASE_NAME: 'hunger-database',
   DATABASE_VERSION: 1,
   OBJECT_STORE_NAME: 'restaurant',
+  CACHE_NAME: 'Hunger-v1',
 };
 
 export default CONFIG;
