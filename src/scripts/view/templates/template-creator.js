@@ -42,7 +42,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 const createRestaurantItemTemplate = (restaurant) => `
     <div class="res">
       <div class="res-image">
-        <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" alt="">
+        <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" alt="${restaurant.name}">
       </div>
       <div class="res-city">
         <p>${restaurant.city}</p>
