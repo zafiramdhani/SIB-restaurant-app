@@ -362,11 +362,16 @@ footer {
   }
 
   #explore #all-content .res-description h3 {
-    font-size: .8em;
+    font-size: 1em;
+  }
+  
+  #explore #all-content .res-description h3 a {
+    display: block;
+    min-height: 44px;
   }
 
   #explore #all-content .res-description p {
-    font-size: .6em;
+    font-size: .8em;
   }
 
   #explore #detail-content {
