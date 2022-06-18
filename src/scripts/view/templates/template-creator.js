@@ -3,7 +3,7 @@ import CONFIG from '../../globals/config';
 const createRestaurantDetailTemplate = (restaurant) => `
   <div class="res-detail-header">
     <div class="image">
-      <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" class="restaurant-picture" alt="${restaurant.name}">
+      <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" class="restaurant-picture" alt="${restaurant.name}">
     </div>
     <div class="desc">
       <h2>${restaurant.name}</h2>
@@ -42,7 +42,7 @@ const createRestaurantDetailTemplate = (restaurant) => `
 const createRestaurantItemTemplate = (restaurant) => `
     <div class="res">
       <div class="res-image">
-        <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" alt="${restaurant.name}">
+        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" alt="${restaurant.name}">
       </div>
       <div class="res-city">
         <p>${restaurant.city}</p>
