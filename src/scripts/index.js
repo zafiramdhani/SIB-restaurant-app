@@ -3,6 +3,8 @@ import '../styles/main.css';
 import '../styles/animation.css';
 import App from './view/app';
 import swRegister from './utils/sw-register';
+import 'lazysizes';
+import 'lazysizes/plugins/parent-fit/ls.parent-fit';
 
 const app = new App({
   button: document.querySelector('#hamburger-btn'),
