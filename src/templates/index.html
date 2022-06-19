@@ -9,6 +9,10 @@
   <meta name="theme-color" content="#ee5f00">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" href="favicon.png">
+<<<<<<< HEAD
+  <link rel="apple-touch-icon" href="favicon.png">
+=======
+>>>>>>> master
   <script src="https://kit.fontawesome.com/de784a0440.js" crossorigin="anonymous"></script>
   <title>Hunger | Restaurant App</title>
 </head>
@@ -34,7 +38,10 @@
   <header>
     <div id="jumbotron">
       <div id="hero">
-        <img src="./images/heros/hero-image_4.jpg" width="100%" alt="Hero image">
+        <picture>
+          <source media="(max-width: 600px)" srcset="./images/heros/hero-image_4-small.jpg">
+          <img class="lazyload" data-src="./images/heros/hero-image_4-large.jpg" width="100%" alt="Hero image">
+        </picture>
       </div>
     </div>
   </header>

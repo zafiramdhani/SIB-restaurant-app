@@ -4,7 +4,7 @@
   "description": "Explore your favorite restaurants",
   "start_url": "/index.html",
   "display": "standalone",
-  "background-color": "#ffffff",
+  "background_color": "#ffffff",
   "theme_color": "#ee5f00",
   "icons": [
     {

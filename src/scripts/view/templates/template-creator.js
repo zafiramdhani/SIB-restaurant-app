@@ -3,7 +3,11 @@ import CONFIG from '../../globals/config';
 const createRestaurantDetailTemplate = (restaurant) => `
   <div class="res-detail-header">
     <div class="image">
+<<<<<<< HEAD
+      <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" class="restaurant-picture" alt="${restaurant.name}">
+=======
       <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" class="restaurant-picture" alt="${restaurant.name}">
+>>>>>>> master
     </div>
     <div class="desc">
       <h2>${restaurant.name}</h2>
@@ -42,13 +46,21 @@ const createRestaurantDetailTemplate = (restaurant) => `
 const createRestaurantItemTemplate = (restaurant) => `
     <div class="res">
       <div class="res-image">
+<<<<<<< HEAD
+        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" alt="${restaurant.name}">
+=======
         <img src="${CONFIG.BASE_IMAGE_URL_SMALL + restaurant.pictureId}" alt="${restaurant.name}">
+>>>>>>> master
       </div>
       <div class="res-city">
         <p>${restaurant.city}</p>
       </div>
       <div class="res-description">
+<<<<<<< HEAD
+        <h3 class="restaurant-name"><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a></h3>
+=======
         <h3><a href="${`/#/detail/${restaurant.id}`}">${restaurant.name}</a></h3>
+>>>>>>> master
         <p>Rating ⭐️${restaurant.rating}</p>
       </div>
     </div>
