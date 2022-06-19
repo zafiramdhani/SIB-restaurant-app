@@ -35,7 +35,10 @@
   <header>
     <div id="jumbotron">
       <div id="hero">
-        <img class="lazyload" data-src="./images/heros/hero-image_4.jpg" width="100%" alt="Hero image">
+        <picture>
+          <source media="(max-width: 600px)" srcset="./images/heros/hero-image_4-small.jpg">
+          <img class="lazyload" data-src="./images/heros/hero-image_4-large.jpg" width="100%" alt="Hero image">
+        </picture>
       </div>
     </div>
   </header>
