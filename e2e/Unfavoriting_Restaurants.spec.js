@@ -7,7 +7,7 @@ Before(({ I }) => {
   I.amOnPage('/#/favorite');
 });
 
-Scenario('Favoriting a restaurant', async ({ I }) => {
+Scenario('Unfavoriting a restaurant', async ({ I }) => {
   I.seeElement('#all-content');
   I.amOnPage('/');
   I.waitForElement('.res', 10);
@@ -17,7 +17,7 @@ Scenario('Favoriting a restaurant', async ({ I }) => {
   const firstRestaurantName = await I.grabTextFrom(firstRestaurant);
   I.click(firstRestaurant);
 
-  I.waitForElement('#favorite-button', 10);
+  I.waitForElement('#favorite-button', 20);
   I.seeElement('#favorite-button');
   I.click('#favorite-button');
 
@@ -28,9 +28,10 @@ Scenario('Favoriting a restaurant', async ({ I }) => {
   assert.strictEqual(firstRestaurantName, favoritedRestaurantName);
 
   I.click(firstRestaurant);
-  I.waitForElement('#favorite-button', 10);
+  I.waitForElement('#favorite-button', 20);
   I.seeElement('#favorite-button');
   I.click('#favorite-button');
 
   I.amOnPage('/#/favorite');
+  I.seeNumberOfElements('.res', 0);
 });
